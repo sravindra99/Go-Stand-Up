@@ -31,16 +31,8 @@ func (s *Session) PickRandomUser() (string, error) {
 	if len(s.UserMap) < 1 {
 		return "", fmt.Errorf("no one left to pick")
 	}
-	if len(s.UserMap) == 1 {
-		for k, _ := range s.UserMap {
-			res = k
-		}
-		delete(s.UserMap, res)
-		return res, nil
-	}
 
 	for k, _ := range s.UserMap {
-
 		res = k
 		break
 
