@@ -7,7 +7,6 @@ import (
 
 type Session struct {
 	UserMap map[string]bool
-	done    bool
 }
 
 func (s *Session) BuildUserMap(input string) error {
