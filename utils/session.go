@@ -2,7 +2,6 @@ package utils
 
 import (
 	"fmt"
-	"math/rand"
 	"strings"
 )
 
@@ -26,7 +25,7 @@ func (s *Session) BuildUserMap(input string) error {
 }
 
 func (s *Session) PickRandomUser() (string, error) {
-	// Random picking logic manually written. Iterating over maps is pseudorandom too but isn't intuitive to a newbie
+	// Random picking logic not manually written. Iterating over maps is pseudorandom in itself
 	var res string
 
 	if len(s.UserMap) < 1 {
@@ -39,14 +38,12 @@ func (s *Session) PickRandomUser() (string, error) {
 		delete(s.UserMap, res)
 		return res, nil
 	}
-	num := rand.Intn(len(s.UserMap))
 
 	for k, _ := range s.UserMap {
-		num -= 1
-		if num == 0 {
-			res = k
-			break
-		}
+
+		res = k
+		break
+
 	}
 
 	if res != "" {

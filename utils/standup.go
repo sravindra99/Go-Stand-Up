@@ -21,7 +21,7 @@ func Standup(input string) {
 		return
 	}
 	var next bool
-	for standup.IsDone(){
+	for standup.IsDone() {
 		infoText.Printf("Choose?(Y/n)")
 		fmt.Scanf("%s", choice)
 		next = choice != "n"
