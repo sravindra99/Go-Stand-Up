@@ -2,9 +2,11 @@ package main
 
 import (
 	"bufio"
-	"github.com/fatih/color"
-	"github.com/sravindra99/Go-Stand-Up/utils"
 	"os"
+
+	"github.com/fatih/color"
+
+	"github.com/sravindra99/Go-Stand-Up/utils"
 )
 
 func main() {
